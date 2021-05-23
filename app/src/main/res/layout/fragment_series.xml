@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/serie_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Nome da serie" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/main_drop_iv"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/image_placeholder"
+        android:layout_marginTop="7.5dp"
+        android:background="@drawable/circular_shape"
+        app:layout_constraintStart_toStartOf="@id/serie_tv_title"
+        app:layout_constraintTop_toBottomOf="@id/serie_tv_title"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_drop_iv"
+        android:paddingBottom="20dp"
+        android:clipToPadding="false"
+        android:layout_marginTop="7.5dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="2"
+        tools:listitem="@layout/recyclerview_main_cell" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
